@@ -7,7 +7,7 @@ interface Stack {
     boolean isEmpty(); // should return boolean, not String
 }
 
-class ArrayStack implements Stack {
+class A implements Stack {
     private String[] elements = new String[10];
     private int top = -1;
 
@@ -43,8 +43,8 @@ class ArrayStack implements Stack {
 
 public class TestEditor {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ArrayStack undostack = new ArrayStack();
+        Scanner = new Scanner(System.in);
+        A obj = new A();
 
         while (true) {
             System.out.println("\n__Test Editor__");
@@ -60,16 +60,16 @@ public class TestEditor {
                 case 1:
                     System.out.println("Enter text:");
                     String text = sc.nextLine();  // Corrected to nextLine()
-                    undostack.push(text);
+                    obj.push(text);
                     break;
                 case 2:
-                    String undo = undostack.pop();
+                    String undo = obj.pop();
                     if (undo != null) {
                         System.out.println("Undo: " + undo);
                     }
                     break;
                 case 3:
-                    String current = undostack.peek();
+                    String current = obj.peek();
                     System.out.println("Current text: " + (current != null ? current : "No text"));
                     break;
                 case 4:
@@ -82,3 +82,4 @@ public class TestEditor {
         }
     }
 }
+
